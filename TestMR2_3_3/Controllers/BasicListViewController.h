@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BasicListViewController.h
 //  TestMR2_3_3
 //
 //  Created by Richard Wylie on 28/07/2014.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface BasicListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end
-

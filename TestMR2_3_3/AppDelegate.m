@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Test1+Custom.h"
 
 @interface AppDelegate ()
             
@@ -18,7 +19,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [MagicalRecord setLoggingLevel:MagicalRecordLoggingLevelVerbose];
+    [MagicalRecord setupCoreDataStack];
+    NSMutableArray *entities = [[NSMutableArray alloc] init];
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+        for (int i=0; i<100; i++) {
+            [entities addObject:[Test1 createRandomEntityInContext:localContext]];
+        }
+    }completion:^(BOOL success, NSError *error) {
+        NSLog(@"Success? %d Count:%d", success, [Test1 MR_countOfEntities]);
+    }];
     return YES;
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
