@@ -27,13 +27,6 @@
     return self;
 }
 
--(NSFetchedResultsController*)frc {
-//    if(!_frc) {
-//        _frc = [Test1 MR_fetchAllGroupedBy:nil withPredicate:nil sortedBy:@"lName" ascending:YES];
-//    }
-    return _frc;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
