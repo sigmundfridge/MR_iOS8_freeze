@@ -38,7 +38,11 @@
 - (void)updateFRC {
     NSLog(@"Starting FRC");
     self.frc = [Test1 MR_fetchAllGroupedBy:@"initial" withPredicate:nil sortedBy:@"lName" ascending:YES];
-    NSLog(@"UpdatedFRC");
+    NSLog(@"First grouped FRC loaded");
+    self.frc = [Test1 MR_fetchAllGroupedBy:nil withPredicate:nil sortedBy:@"lName" ascending:YES];
+    NSLog(@"Second nil Loaded");
+    self.frc = [Test1 MR_fetchAllGroupedBy:@"initial" withPredicate:nil sortedBy:@"lName" ascending:YES];
+    NSLog(@"Third grouped Loaded");
 }
 
 - (void)didReceiveMemoryWarning
