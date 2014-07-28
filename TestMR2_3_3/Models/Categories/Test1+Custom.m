@@ -30,8 +30,8 @@
 }
 
 -(NSString*)initial {
-    NSLog(@"Initial : %@", [self.lName substringFromIndex:1]);
-    return [self.lName substringFromIndex:1];
+//    NSLog(@"Initial : %@", [self.lName substringToIndex:1]);
+    return [self.lName substringToIndex:1];
 }
 
 @end

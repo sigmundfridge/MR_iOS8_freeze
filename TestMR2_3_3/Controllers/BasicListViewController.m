@@ -37,7 +37,7 @@
 
 - (void)updateFRC {
     NSLog(@"Starting FRC");
-    self.frc = [Test1 MR_fetchAllGroupedBy:@"lName" withPredicate:nil sortedBy:@"lName" ascending:YES];
+    self.frc = [Test1 MR_fetchAllGroupedBy:@"initial" withPredicate:nil sortedBy:@"lName" ascending:YES];
     NSLog(@"UpdatedFRC");
 }
 
@@ -54,6 +54,11 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.frc.sections.count;
+}
+
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    Test1 *item = [self.frc objectAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
+    return [item.lName substringToIndex:1];
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
