@@ -36,19 +36,24 @@
 }
 
 - (void)updateFRC {
-    NSLog(@"Starting FRC");
+    NSLog(@"Start: Loading First (Grouped) FRC");
     self.frc = [Test1 MR_fetchAllGroupedBy:@"initial" withPredicate:nil sortedBy:@"lName" ascending:YES];
+    NSLog(@"End: Loading First FRC");
     if(self.multipleCalls) {
         self.frc = nil;
-        NSLog(@"First grouped FRC loaded");
+        NSLog(@"nil First FRC");
+        NSLog(@"Start: Loading Second (non-grouped) FRC");
         self.frc = [Test1 MR_fetchAllGroupedBy:nil withPredicate:nil sortedBy:@"lName" ascending:YES];
+        NSLog(@"End: Loading Second (non-grouped) FRC");
         self.frc = nil;
-        NSLog(@"Second nil Loaded");
+        NSLog(@"nil Second FRC");
+        NSLog(@"Start: Loading Third (Grouped) FRC");
         self.frc = [Test1 MR_fetchAllGroupedBy:@"initial" withPredicate:nil sortedBy:@"lName" ascending:YES];
+        NSLog(@"End: Loading Third (Grouped) FRC");
         self.frc = nil;
-        NSLog(@"Third grouped Loaded");
+        NSLog(@"nil Third FRC");
     }
-    NSLog(@"Ending FRC");
+    NSLog(@"Ending FRC setup");
 }
 
 - (void)didReceiveMemoryWarning

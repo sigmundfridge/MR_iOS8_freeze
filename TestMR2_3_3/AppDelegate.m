@@ -27,7 +27,7 @@
             [entities addObject:[Test1 createRandomEntityInContext:localContext]];
         }
     }completion:^(BOOL success, NSError *error) {
-        NSLog(@"Success? %d Count:%d", success, [Test1 MR_countOfEntities]);
+        NSLog(@"Added 100 records. New count:%d", [Test1 MR_countOfEntities]);
     }];
     return YES;
 
