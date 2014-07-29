@@ -43,6 +43,7 @@
 		92A2BE98198689AB00430ACC /* Test1.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2BE97198689AB00430ACC /* Test1.m */; };
 		92A2BE9F19868AFA00430ACC /* Test1+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2BE9E19868AFA00430ACC /* Test1+Custom.m */; };
 		92A2BEA6198690F600430ACC /* BasicListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2BEA5198690F600430ACC /* BasicListViewController.m */; };
+		92A2BEA91987CEA000430ACC /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A2BEA81987CEA000430ACC /* MenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,8 @@
 		92A2BE9E19868AFA00430ACC /* Test1+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Test1+Custom.m"; path = "Models/Categories/Test1+Custom.m"; sourceTree = "<group>"; };
 		92A2BEA4198690F600430ACC /* BasicListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicListViewController.h; path = Controllers/BasicListViewController.h; sourceTree = "<group>"; };
 		92A2BEA5198690F600430ACC /* BasicListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BasicListViewController.m; path = Controllers/BasicListViewController.m; sourceTree = "<group>"; };
+		92A2BEA71987CEA000430ACC /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = Controllers/MenuViewController.h; sourceTree = "<group>"; };
+		92A2BEA81987CEA000430ACC /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = Controllers/MenuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,6 +358,8 @@
 		92A2BEA31986906B00430ACC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				92A2BEA71987CEA000430ACC /* MenuViewController.h */,
+				92A2BEA81987CEA000430ACC /* MenuViewController.m */,
 				92A2BEA4198690F600430ACC /* BasicListViewController.h */,
 				92A2BEA5198690F600430ACC /* BasicListViewController.m */,
 			);
@@ -491,6 +496,7 @@
 				92A2BE771986865A00430ACC /* NSNumber+MagicalDataImport.m in Sources */,
 				92A2BE8D1986865A00430ACC /* MagicalRecord.m in Sources */,
 				92A2BE161986862E00430ACC /* main.m in Sources */,
+				92A2BEA91987CEA000430ACC /* MenuViewController.m in Sources */,
 				92A2BE881986865A00430ACC /* MagicalRecord+ErrorHandling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,7 +618,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/$(PRODUCT_NAME)-Prefix.pch";
 				INFOPLIST_FILE = TestMR2_3_3/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -627,7 +633,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/$(PRODUCT_NAME)-Prefix.pch";
 				INFOPLIST_FILE = TestMR2_3_3/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

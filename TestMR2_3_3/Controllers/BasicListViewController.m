@@ -38,11 +38,17 @@
 - (void)updateFRC {
     NSLog(@"Starting FRC");
     self.frc = [Test1 MR_fetchAllGroupedBy:@"initial" withPredicate:nil sortedBy:@"lName" ascending:YES];
-    NSLog(@"First grouped FRC loaded");
-    self.frc = [Test1 MR_fetchAllGroupedBy:nil withPredicate:nil sortedBy:@"lName" ascending:YES];
-    NSLog(@"Second nil Loaded");
-    self.frc = [Test1 MR_fetchAllGroupedBy:@"initial" withPredicate:nil sortedBy:@"lName" ascending:YES];
-    NSLog(@"Third grouped Loaded");
+    if(self.multipleCalls) {
+        self.frc = nil;
+        NSLog(@"First grouped FRC loaded");
+        self.frc = [Test1 MR_fetchAllGroupedBy:nil withPredicate:nil sortedBy:@"lName" ascending:YES];
+        self.frc = nil;
+        NSLog(@"Second nil Loaded");
+        self.frc = [Test1 MR_fetchAllGroupedBy:@"initial" withPredicate:nil sortedBy:@"lName" ascending:YES];
+        self.frc = nil;
+        NSLog(@"Third grouped Loaded");
+    }
+    NSLog(@"Ending FRC");
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,4 +80,9 @@
     cell.textLabel.text = item.lName;
     return cell;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(!self.multipleCalls) [self performSegueWithIdentifier:@"tableToTable" sender:self];
+}
+
 @end

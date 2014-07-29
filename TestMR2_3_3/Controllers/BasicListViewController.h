@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BasicListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-
+@property(nonatomic) BOOL multipleCalls;
 @end
